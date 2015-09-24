@@ -11,8 +11,6 @@ RUN pip install --upgrade --pre test --extra-index-url http://admin:password@pyp
 
 COPY . /opt/test
 
-RUN SECRET_KEY=notsecret python adminui/manage.py collectstatic --noinput
-
 EXPOSE 80
 
 CMD /usr/bin/supervisord -c /etc/supervisor/supervisord.conf -n
